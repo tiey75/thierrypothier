@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Test Menu</title>
+<style>
+  #overlayMenu {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.9);
+    color: white;
+    display: none;
+    align-items: center; justify-content: center;
+    font-size: 2rem;
+  }
+  #overlayMenu.active {
+    display: flex;
+  }
+  #closeMenu {
+    position: absolute;
+    top: 20px; right: 20px;
+    font-size: 3rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  #burger {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div id="burger">☰</div>
+
+<div id="overlayMenu">
+  <button id="closeMenu">×</button>
+  <nav>
+    <a href="#">Home</a> | <a href="#">CV</a> | <a href="#">Contact</a>
+  </nav>
+</div>
+
+<script>
+console.log('Script JS chargé');
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM chargé');
+  
+  const burger = document.getElementById('burger');
+  const overlayMenu = document.getElementById('overlayMenu');
+  const closeMenuBtn = document.getElementById('closeMenu');
+
+  console.log('closeMenuBtn:', closeMenuBtn);
+
+  burger.addEventListener('click', () => {
+    overlayMenu.classList.add('active');
+  });
+
+  closeMenuBtn.addEventListener('click', () => {
+    console.log('Click detected on close');
+    overlayMenu.classList.remove('active');
+  });
+});
+</script>
+
+</body>
+</html>
