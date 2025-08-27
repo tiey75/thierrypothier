@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  height: 80px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1001;
+}
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+header .burger {
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+}
+header .burger div {
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+header .burger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+header .burger.active div:nth-child(2) {
+  opacity: 0;
+}
+header .burger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-size: 32px;
+  color: white;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+.overlay-menu a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.overlay-menu a:hover {
+  color: #00bcd4;
+}
+.overlay-menu #closeMenu {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.overlay-menu.active {
+  transform: translateY(0);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.video-container #unmuteBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #00bcd4;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 15px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 188, 212, 0.6);
+  transition: background-color 0.3s ease;
+}
+.video-container #unmuteBtn:hover {
+  background-color: #0097a7;
+}/*# sourceMappingURL=style.css.map */
